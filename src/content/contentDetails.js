@@ -1,7 +1,20 @@
-import React from 'react'
+import {Component,useEffect,useState}  from 'react'
 import { ContentBox } from './contentStyles'
+import axios from 'axios'
 
 const ContentDetails = (prop) => {
+
+  const [state, setstate] = useState([]);
+
+  useEffect(() => {
+    prop.details.pilots.map((item)=>{
+      axios.get(item)
+      .then(res => {
+        setstate(res.data);
+      })
+    })
+  }, [])
+
 
   return (
       <>
@@ -21,8 +34,8 @@ const ContentDetails = (prop) => {
           <ContentBox>
             <h1>Pasajeros</h1>
             <hr/>
-            {prop.details.pilots.map((item)=>{
-              <a>{item}</a>
+            {prop.details.pilots.map((item,key)=>{
+              return <a key={key}>{item}</a>
             })}
           </ContentBox>
           </>
@@ -31,3 +44,4 @@ const ContentDetails = (prop) => {
 }
 
 export default ContentDetails
+
