@@ -1,29 +1,29 @@
 import React from 'react'
-import { Content,ContentBox } from './contentStyles'
+import { ContentBox } from './contentStyles'
 
 const ContentDetails = (prop) => {
 
-    return (
+  return (
       <>
           <ContentBox>
-            <h1>Executor</h1>
-            <a>Executor-class start dreadnought</a>
+            <h1>{prop.details.name}</h1>
+            <a>{prop.details.model}</a>
             <hr/>
             <h2>Fabricante</h2>
-            <a>{prop.details.fabricante}</a>
+            <a>{prop.details.manufacturer}</a>
             <h3>Largo</h3>
-            <a>{prop.details.largo}</a>
+            <a>{prop.details.lenght}</a>
             <h3>Valor</h3>
-            <a>{prop.details.creditos} creditos</a>
+            <a>{prop.details.cost_in_credits} creditos</a>
             <h3>Cantidad pasajeros</h3>
-            <a>{prop.details.pasajeros}</a>
+            <a>{prop.details.passengers}</a>
           </ContentBox>
           <ContentBox>
             <h1>Pasajeros</h1>
             <hr/>
-            <a>chewbaca</a>
-            <a>123124</a>
-            <a>Lando</a>
+            {prop.details.pilots.map((item)=>{
+              <a>{item}</a>
+            })}
           </ContentBox>
           </>
        

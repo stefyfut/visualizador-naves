@@ -43,6 +43,10 @@ export const ContentBox =styled.div`
     margin-top:20px;
     padding-bottom:20px;
 
+    h1{
+        text-align: center;
+    }
+
     select{
         width: 90%;
         margin-top: 20px;
@@ -50,6 +54,10 @@ export const ContentBox =styled.div`
     hr{
         width:50%;
         border:1px solid #000;
+    }
+
+    a{
+        text-align: center;
     }
 
     .boxSelect{
